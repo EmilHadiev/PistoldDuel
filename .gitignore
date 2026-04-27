@@ -10,6 +10,10 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/Assets/TextMesh Pro
+/Assets/Plugins
+/Assets/PluginYourGames
+/Assets/WebGLTemplates
 *.log
 
 # MemoryCaptures can get excessive in size.
