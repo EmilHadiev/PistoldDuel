@@ -590,6 +590,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+--- !u!114 &866234457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866234450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65856428401602e4a926dea49cb58b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282775046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1140,14 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3685160884228630335, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685160884228630335, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3706545203862383572, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
       propertyPath: m_Name
       value: Bullet
@@ -1136,13 +1156,17 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5136002474573305948, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8012594972803564747, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.8599997
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 8012594972803564747, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 8012594972803564747, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1189,6 +1213,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3706545203862383572, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
       insertIndex: -1
       addedObject: {fileID: 866234455}
+    - targetCorrespondingSourceObject: {fileID: 3706545203862383572, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 866234457}
   m_SourcePrefab: {fileID: 100100000, guid: e93f49d3a6ff6ca49b72a4e6efdec402, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
