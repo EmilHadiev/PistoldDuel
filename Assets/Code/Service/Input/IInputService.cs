@@ -2,5 +2,5 @@
 
 public interface IInputService
 {
-    event Action Clicked;
+    event Action Attacked;
 }

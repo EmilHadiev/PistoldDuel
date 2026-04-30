@@ -6,7 +6,7 @@ public class InputService : ITickable, IInputService
 {
     private const int LeftMouseButton = 0;
 
-    public event Action Clicked;
+    public event Action Attacked;
 
     public void Tick()
     {
@@ -16,6 +16,6 @@ public class InputService : ITickable, IInputService
 
     private void HandleClick()
     {
-        Clicked?.Invoke();
+        Attacked?.Invoke();
     }
 }

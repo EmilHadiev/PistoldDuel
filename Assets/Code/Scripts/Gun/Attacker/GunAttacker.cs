@@ -5,6 +5,7 @@ public abstract class GunAttacker : MonoBehaviour
 {
     private IInputService _input; 
     private IGunMover _mover;
+    private IPlayerSoundContiner _playerSound;
 
     private void Awake()
     {
@@ -14,22 +15,24 @@ public abstract class GunAttacker : MonoBehaviour
 
     private void OnEnable()
     {
-        _input.Clicked += Attack;
+        _input.Attacked += Attack;
     }
 
     private void OnDisable()
     {
-        _input.Clicked -= Attack;
+        _input.Attacked -= Attack;
     }
 
     [Inject]
-    private void Constructor(IInputService input)
+    private void Constructor(IInputService input, IPlayerSoundContiner playerSoundContiner)
     {
         _input = input;
+        _playerSound = playerSoundContiner;
     }
 
     protected virtual void Attack()
     {
         _mover.Move();
+        _playerSound.Play(AssetProvider.Shoot);
     }
 }

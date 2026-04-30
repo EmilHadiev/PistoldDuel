@@ -21,12 +21,12 @@ public class Wall : MonoBehaviour
 
     private void OnEnable()
     {
-        _input.Clicked += ResetWall;
+        _input.Attacked += ResetWall;
     }
 
     private void OnDisable()
     {
-        _input.Clicked -= ResetWall;
+        _input.Attacked -= ResetWall;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

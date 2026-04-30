@@ -13,10 +13,10 @@ TagManager:
   - Water
   - UI
   - Wall
-  - Pistol
-  - Bullet
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
   - 
   - 
   - 
