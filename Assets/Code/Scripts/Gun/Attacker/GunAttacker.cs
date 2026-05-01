@@ -3,7 +3,6 @@ using Zenject;
 
 public abstract class GunAttacker : MonoBehaviour
 {
-    private IInputService _input; 
     private IGunMover _mover;
     private IPlayerSoundContiner _playerSound;
 
@@ -13,20 +12,9 @@ public abstract class GunAttacker : MonoBehaviour
         _mover = gun.Mover;
     }
 
-    private void OnEnable()
-    {
-        _input.Attacked += Attack;
-    }
-
-    private void OnDisable()
-    {
-        _input.Attacked -= Attack;
-    }
-
     [Inject]
-    private void Constructor(IInputService input, IPlayerSoundContiner playerSoundContiner)
+    private void Constructor(IPlayerSoundContiner playerSoundContiner)
     {
-        _input = input;
         _playerSound = playerSoundContiner;
     }
 

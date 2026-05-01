@@ -10,7 +10,7 @@ public class GunMover : MonoBehaviour, IGunMover
         _recoiler ??= GetComponent<GunRecoiler>();
     }
 
-    public void Move()
+    public virtual void Move()
     {
         _recoiler.ApplyRecoil();
     }

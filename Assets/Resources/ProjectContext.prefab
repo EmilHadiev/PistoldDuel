@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerSound: {fileID: 4480058577658070879, guid: 06a176060e264ac4c9ebe02b25a8219b, type: 3}
   _gunData: {fileID: 11400000, guid: 663827971465387478ec17fc781cdc55, type: 2}
+  _playerData: {fileID: 11400000, guid: 6f82d7dea12cdce4b9a4dd5dd2c0119f, type: 2}

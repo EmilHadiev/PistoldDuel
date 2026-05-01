@@ -5,12 +5,13 @@ public class GlobalInstaller : MonoInstaller
 {
     [SerializeField] private PlayerSoundContainer _playerSound;
     [SerializeField] private GunData _gunData;
+    [SerializeField] private PlayerData _playerData;
 
     public override void InstallBindings()
     {
         BindAddressables();
         BindSoundContainer();
-        BindGunData();
+        BindData();
     }
 
     private void BindAddressables()
@@ -23,8 +24,9 @@ public class GlobalInstaller : MonoInstaller
         Container.BindInterfacesTo<PlayerSoundContainer>().FromComponentInNewPrefab(_playerSound).AsSingle();
     }
 
-    private void BindGunData()
+    private void BindData()
     {
         Container.Bind<GunData>().FromNewScriptableObject(_gunData).AsSingle();
+        Container.Bind<PlayerData>().FromNewScriptableObject(_playerData).AsSingle();
     }
 }

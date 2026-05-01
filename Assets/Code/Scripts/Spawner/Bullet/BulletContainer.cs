@@ -58,6 +58,8 @@ public class BulletContainer
             if (bullet.TryGetComponent(out IColorChangable colorChanger))
                 colorChanger.SetColor(_bulletColor);
 
+
+
             _pool.Add(bullet);
         }
     }

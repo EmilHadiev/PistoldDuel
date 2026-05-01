@@ -889,10 +889,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3612050171511987730, guid: e5fdd0d60d04f8e4e9bbe094946df51e, type: 3}
-      propertyPath: _colorChanger
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3810449622444981545, guid: e5fdd0d60d04f8e4e9bbe094946df51e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -935,7 +931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5432908343634661244, guid: e5fdd0d60d04f8e4e9bbe094946df51e, type: 3}
       propertyPath: m_Name
-      value: Pistol
+      value: PlayerPistol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
