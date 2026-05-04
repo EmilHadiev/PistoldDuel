@@ -5,11 +5,13 @@ public abstract class GunAttacker : MonoBehaviour
 {
     private IGunMover _mover;
     private IPlayerSoundContiner _playerSound;
+    private IGunView _view;
 
     private void Awake()
     {
         var gun = GetComponent<IGun>();
         _mover = gun.Mover;
+        _view = gun.View;
     }
 
     [Inject]
@@ -22,5 +24,6 @@ public abstract class GunAttacker : MonoBehaviour
     {
         _mover.Move();
         _playerSound.Play(AssetProvider.Shoot);
+        _view.PlayAnimation();
     }
 }

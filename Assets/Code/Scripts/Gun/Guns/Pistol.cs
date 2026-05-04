@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PistolAttacker))]
 [RequireComponent(typeof(PlayerBulletSpawner))]
 [RequireComponent(typeof(BulletSpawner))]
 public class Pistol : Gun

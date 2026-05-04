@@ -1,24 +1,45 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class GunView : MonoBehaviour, IColorChangable
+public class GunView : MonoBehaviour, IGunView
 {
-    [SerializeField] private SpriteRenderer _render;
-    [Inject] private readonly GunData _gunData;
+    private GunPrefab _gunPrefab;
+    private GunData _gunData;
+    private IFactory _factory;
 
     private void OnValidate()
     {
-        _render ??= GetComponent<SpriteRenderer>();
+        _gunPrefab ??= GetComponentInChildren<GunPrefab>();
     }
 
     private void Awake()
     {
-        SetColor(_gunData.Color);
+        CreateGunPrefab().Forget();
+    }
+
+    [Inject]
+    private void Constructor(GunData gunData, IFactory factory)
+    {
+        _factory = factory;
+        _gunData = gunData;
+    }
+
+    public void PlayAnimation()
+    {
+        _gunPrefab.PlayAnimation();
     }
 
     public void SetColor(Color color)
     {
-        _render.color = color;
+        _gunPrefab.SetColor(color);
+    }
+
+    private async UniTask CreateGunPrefab()
+    {
+        var prefab = await _factory.CreateAsync(AssetProvider.GunDeagle);
+        _gunPrefab = prefab.GetComponent<GunPrefab>();
+
+        prefab.transform.SetParent(transform);
     }
 }

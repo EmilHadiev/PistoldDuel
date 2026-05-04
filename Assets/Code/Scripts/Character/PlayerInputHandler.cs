@@ -35,5 +35,6 @@ public class PlayerInputHandler : MonoBehaviour
         _gun.Mover.Move();
         _gun.Sound.Play(AssetProvider.Shoot);
         _gun.Spawner.Spawn();
+        _gun.View.PlayAnimation();
     }
 }
