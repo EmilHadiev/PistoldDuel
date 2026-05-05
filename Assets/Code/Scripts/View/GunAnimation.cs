@@ -3,8 +3,11 @@ using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
+[RequireComponent(typeof(DieAnimationPerformer))]
 public class GunAnimation : MonoBehaviour
 {
+    [SerializeField] private DieAnimationPerformer _dieAnimation;
+
     [Header("Ссылки на компоненты")]
     [SerializeField] private Transform _slider;          // Затвор
     [SerializeField] private Transform _trigger;       // Спусковой крючок
@@ -27,6 +30,11 @@ public class GunAnimation : MonoBehaviour
     private BulletSpawnPosition _bulletSpawnPosition;
     private ParticlesView _particle;
 
+    private void OnValidate()
+    {
+        _dieAnimation ??= GetComponent<DieAnimationPerformer>();
+    }
+
     private void Awake()
     {
         // Запоминаем исходные позиции при старте, чтобы всегда возвращаться к ним
@@ -46,10 +54,15 @@ public class GunAnimation : MonoBehaviour
         shootSequence?.Kill();
     }
 
-    public void Play()
+    public void PlayAttack()
     {
         PerformAnimation();
         _particle.Play();
+    }
+
+    public void PlayDieAnimation()
+    {
+        _dieAnimation.Play();
     }
 
     private void PerformAnimation()

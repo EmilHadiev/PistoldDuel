@@ -8,6 +8,7 @@ public static class AssetProvider
 
     #region Guns
     public const string GunDeagle = nameof(GunDeagle);
+    public const string GunSawed = nameof(GunSawed);
     #endregion
 
     #region Particles

@@ -1,7 +1,4 @@
-using Cysharp.Threading.Tasks;
-using System;
 using UnityEngine;
-using Zenject;
 
 [RequireComponent(typeof(GunAnimation))]
 public class GunPrefab : MonoBehaviour
@@ -13,9 +10,14 @@ public class GunPrefab : MonoBehaviour
         _animation ??= GetComponent<GunAnimation>();
     }
 
-    public void PlayAnimation()
+    public void PlayAttack()
     {
-        _animation.Play();
+        _animation.PlayAttack();
+    }
+
+    public void PlayDieAnimation()
+    {
+        _animation.PlayDieAnimation();
     }
 
     public void SetColor(Color color)

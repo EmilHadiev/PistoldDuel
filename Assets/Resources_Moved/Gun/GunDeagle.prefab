@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 810186874244891912}
   - component: {fileID: 2616117948920142977}
   - component: {fileID: 8906997353603669864}
+  - component: {fileID: 2548355172844629002}
   m_Layer: 0
   m_Name: GunDeagle
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.675, y: 1.25, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 819762504933180034}
@@ -113,12 +114,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b664ab9e69fe073459d7c74a60807353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dieAnimation: {fileID: 2548355172844629002}
   _slider: {fileID: 820208078451533434}
   _trigger: {fileID: 828630280298166738}
   _boltRecoilOffset: {x: 0, y: 0, z: 0.075}
   _boltDuration: 0.1
   _triggerRotationOffset: {x: 25, y: 0, z: 0}
   _triggerDuration: 0.1
+--- !u!114 &2548355172844629002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822193805189787782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be55f070b69da645b0cbabe453d1b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionForce: 25
+  _gunElements:
+  - {fileID: 822193805189787782}
+  - {fileID: 822236166368418172}
+  - {fileID: 822206717483075770}
+  - {fileID: 822790175676580422}
 --- !u!1 &822206717483075770
 GameObject:
   m_ObjectHideFlags: 0

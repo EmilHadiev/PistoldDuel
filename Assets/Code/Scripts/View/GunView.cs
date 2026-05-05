@@ -25,9 +25,14 @@ public class GunView : MonoBehaviour, IGunView
         _gunData = gunData;
     }
 
-    public void PlayAnimation()
+    public void PlayAttackAnimation()
     {
-        _gunPrefab.PlayAnimation();
+        _gunPrefab.PlayAttack();
+    }
+
+    public void PlayDieAnimation()
+    {
+        _gunPrefab.PlayDieAnimation();
     }
 
     public void SetColor(Color color)

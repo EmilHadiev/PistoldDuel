@@ -24,6 +24,6 @@ public abstract class GunAttacker : MonoBehaviour
     {
         _mover.Move();
         _playerSound.Play(AssetProvider.Shoot);
-        _view.PlayAnimation();
+        _view.PlayAttackAnimation();
     }
 }

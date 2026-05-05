@@ -2,6 +2,8 @@
 
 public interface IGunView
 {
-    void PlayAnimation();
+    void PlayAttackAnimation();
+    void PlayDieAnimation();
+
     void SetColor(Color color);
 }
