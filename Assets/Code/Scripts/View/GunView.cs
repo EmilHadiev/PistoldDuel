@@ -44,7 +44,7 @@ public class GunView : MonoBehaviour, IGunView
 
     private async UniTask CreateGunPrefab()
     {
-        var prefab = await _factory.CreateAsync(_playerData.CurrentGund);
+        var prefab = await _factory.CreateAsync(_playerData.GetGunPrefab());
         _gunPrefab = prefab.GetComponent<GunPrefab>();
 
         prefab.transform.SetParent(transform);

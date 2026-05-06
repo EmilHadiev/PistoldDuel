@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 3
-  CurrentGund: GunSawed
+  _charatcter: 0

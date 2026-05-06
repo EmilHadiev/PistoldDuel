@@ -7,11 +7,19 @@ public static class AssetProvider
     #endregion
 
     #region Guns
-    public const string GunDeagle = nameof(GunDeagle);
-    public const string GunSawed = nameof(GunSawed);
+    public const string PrefabDeagle = nameof(PrefabDeagle);
+    public const string PrefabSawed = nameof(PrefabSawed);
     #endregion
 
     #region Particles
     public const string ParticleShoot = nameof(ParticleShoot);
+    #endregion
+
+    #region Character
+    public enum Character
+    {
+        PlayerSawedGun,
+        PlayerDeagle
+    }
     #endregion
 }
