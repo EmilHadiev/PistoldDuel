@@ -14,11 +14,11 @@ public class GunAnimation : MonoBehaviour
 
     [Header("Настройки затвора")]
     [SerializeField] private Vector3 _boltRecoilOffset = new Vector3(0, 0, -0.15f); // Смещение назад
-    [SerializeField] private float _boltDuration = 0.04f; // Время движения назад
+    [SerializeField] private float _boltDuration = 0.1f; // Время движения назад
 
     [Header("Настройки крючка")]
     [SerializeField] private Vector3 _triggerRotationOffset = new Vector3(20f, 0, 0); // Поворот назад
-    [SerializeField] private float _triggerDuration = 0.03f; // Время нажатия
+    [SerializeField] private float _triggerDuration = 0.1f; // Время нажатия
 
     [Inject] private readonly IFactory _factory;
 

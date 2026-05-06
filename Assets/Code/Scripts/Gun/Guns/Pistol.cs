@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerBulletSpawner))]
-[RequireComponent(typeof(BulletSpawner))]
+[RequireComponent(typeof(PistolBulletSpawner))]
 public class Pistol : Gun
 {
     [SerializeField] private BulletSpawner _spawner;

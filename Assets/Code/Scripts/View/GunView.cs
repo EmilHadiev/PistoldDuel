@@ -6,6 +6,7 @@ public class GunView : MonoBehaviour, IGunView
 {
     private GunPrefab _gunPrefab;
     private GunData _gunData;
+    private PlayerData _playerData;
     private IFactory _factory;
 
     private void OnValidate()
@@ -19,10 +20,11 @@ public class GunView : MonoBehaviour, IGunView
     }
 
     [Inject]
-    private void Constructor(GunData gunData, IFactory factory)
+    private void Constructor(GunData gunData, IFactory factory, PlayerData playerData)
     {
         _factory = factory;
         _gunData = gunData;
+        _playerData = playerData;
     }
 
     public void PlayAttackAnimation()
@@ -42,7 +44,7 @@ public class GunView : MonoBehaviour, IGunView
 
     private async UniTask CreateGunPrefab()
     {
-        var prefab = await _factory.CreateAsync(AssetProvider.GunDeagle);
+        var prefab = await _factory.CreateAsync(_playerData.CurrentGund);
         _gunPrefab = prefab.GetComponent<GunPrefab>();
 
         prefab.transform.SetParent(transform);

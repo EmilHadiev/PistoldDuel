@@ -27,6 +27,6 @@ public class PlayerHealth : Health
     private async UniTask AttackPlayer()
     {
         await UniTask.Delay(3000);
-        TakeDamage(5);
+        //TakeDamage(5);
     }
 }

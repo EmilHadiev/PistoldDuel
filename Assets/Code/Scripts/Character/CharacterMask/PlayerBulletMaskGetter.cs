@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerBulletSpawner : BulletSpawner
+public class PlayerBulletMaskGetter : BulletMaskGetter
 {
-    protected override LayerMask GetMask()
+    public override LayerMask GetMask()
     {
         int mask = LayerMask.NameToLayer(CustomMask.PlayerBullet);
         return mask;
