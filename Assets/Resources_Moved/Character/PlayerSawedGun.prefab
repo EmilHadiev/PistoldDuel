@@ -404,6 +404,7 @@ MonoBehaviour:
   - {fileID: 2831841184872684860}
   - {fileID: 4844633511731216910}
   _maskGetter: {fileID: 5031192922419016480}
+  _shootDelay: 0.5
 --- !u!114 &6707119096569230969
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,8 @@ public abstract class BulletSpawner : MonoBehaviour, IAmmunitionsSpawner
     private IFactory _factory;
     private BulletContainer _bulletContainer;
     private Color _bulletColor;
+
+    public event Action Spawned;
 
     private void OnValidate()
     {
@@ -32,7 +35,7 @@ public abstract class BulletSpawner : MonoBehaviour, IAmmunitionsSpawner
         _bulletColor = gunData.Color;
     }
 
-    public void Spawn()
+    public virtual void Spawn()
     {
         for (int i = 0; i < _positions.Length; i++)
         {
@@ -41,5 +44,7 @@ public abstract class BulletSpawner : MonoBehaviour, IAmmunitionsSpawner
             bullet.transform.SetPositionAndRotation(pos.position, pos.rotation);
             bullet.SetActive(true);
         }
+
+        Spawned?.Invoke();
     }
 }

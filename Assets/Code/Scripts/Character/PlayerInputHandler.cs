@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -16,11 +17,13 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnEnable()
     {
         _inputService.Attacked += Attacked;
+        _gun.Spawner.Spawned += OnSpawned;
     }
 
     private void OnDisable()
     {
         _inputService.Attacked -= Attacked;
+        _gun.Spawner.Spawned -= OnSpawned;
     }
 
     [Inject]
@@ -33,8 +36,12 @@ public class PlayerInputHandler : MonoBehaviour
     private void Attacked()
     {
         _gun.Mover.Move();
+        _gun.Spawner.Spawn();        
+    }
+
+    private void OnSpawned()
+    {
         _gun.Sound.Play(AssetProvider.Shoot);
-        _gun.Spawner.Spawn();
         _gun.View.PlayAttackAnimation();
     }
 }
